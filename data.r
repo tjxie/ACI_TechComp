@@ -10,7 +10,7 @@ country = c("ID", "MY", "PH", "SG", "TH", "VN")
 N = length(country)
 
 # Download number of patents from WDI
-patent.resd <- WDI(country = country, 
+patent <- WDI(country = country, 
                   indicator = c("pat_resd"="IP.PAT.RESD"), 
                   start = NULL, 
                   end = NULL, 
