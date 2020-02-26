@@ -56,4 +56,4 @@ plot = ggplot(techcomp[techcomp$year>1999,],
 
 print(plot)
 
-ggsave("techcomp.pdf", w=6, h=4)
+ggsave("techcomp.png", w=6, h=4)
