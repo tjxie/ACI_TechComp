@@ -49,7 +49,7 @@ weighted.pat = data.frame(year=patent.wide[,1],pat.avg=rowSums(weight.wide[,2:(N
 
 techcomp = data.frame(patent[c("iso2c","country","year")],index=patent$pat_resd/rep(weighted.pat$pat.avg,N))
 
-plot = ggplot(techcomp[techcomp$year>1999,], 
+plot = ggplot(techcomp[techcomp$year>1994,], 
               aes(x=year, y=index, linetype=country, color=country)) + 
   geom_line() + xlab("Year") + ylab("Technological Competitiveness Index") +
   theme_bw() + theme(legend.title = element_blank())
