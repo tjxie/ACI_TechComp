@@ -1,3 +1,3 @@
 # ACI_TechComp
- Technological Competitiveness Index
+ASEAN Technological Competitiveness Index
 ![Index](techcomp.png)
