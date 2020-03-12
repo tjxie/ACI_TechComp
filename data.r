@@ -2,12 +2,19 @@ library("WDI")
 library("ggplot2")
 
 # Search series identifier
-# WDIsearch(string = "gdp", field = "name", short = TRUE,
-#           cache = NULL)
+WDIsearch(string = "research", field = "name", short = TRUE,
+          cache = NULL)
 
 # country = c("SG", "TH", "ID", "PH", "MY")
 country = c("ID", "MY", "PH", "SG", "TH", "VN")
 N = length(country)
+
+WDI(country = country, 
+    indicator = c("RDex"="IP.PAT.RESD"), 
+    start = NULL, 
+    end = NULL, 
+    extra = FALSE, 
+    cache = NULL)
 
 # Download number of patents from WDI
 patent <- WDI(country = country, 
@@ -57,3 +64,6 @@ plot = ggplot(techcomp[techcomp$year>1994,],
 print(plot)
 
 ggsave("techcomp.png", w=6, h=4)
+
+write.csv(patent.wide, "patent.csv")
+write.csv(weight.wide, "weight.csv")
